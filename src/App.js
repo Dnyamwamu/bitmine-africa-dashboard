@@ -23,6 +23,7 @@ import {
   ColorMapping,
   Editor,
   Withdraw,
+  History,
 } from "./pages"
 import "./App.css"
 
@@ -96,7 +97,7 @@ const App = () => {
                 <Route path="/customers" element={<Customers />} /> */}
                 <Route path="/deposit" element={<Deposit />} />
                 <Route path="/withdraw" element={<Withdraw />} />
-                <Route path="/history" element={<Customers />} />
+                <Route path="/history" element={<History />} />
                 <Route path="/profile" element={<Customers />} />
                 <Route path="/logout1" element={<Customers />} />
                 apps

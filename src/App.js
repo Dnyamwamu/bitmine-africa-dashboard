@@ -13,6 +13,7 @@ import {
   Pyramid,
   Customers,
   Kanban,
+  Deposit,
   Line,
   Area,
   Bar,
@@ -21,6 +22,7 @@ import {
   ColorPicker,
   ColorMapping,
   Editor,
+  Withdraw,
 } from "./pages"
 import "./App.css"
 
@@ -87,11 +89,16 @@ const App = () => {
               <Routes>
                 {/* dashboard  */}
                 <Route path="/" element={<Ecommerce />} />
-                <Route path="/ecommerce" element={<Ecommerce />} />
+                <Route path="/dashboard" element={<Ecommerce />} />
                 {/* pages  */}
-                <Route path="/orders" element={<Orders />} />
+                {/* <Route path="/orders" element={<Orders />} />
                 <Route path="/employees" element={<Employees />} />
-                <Route path="/customers" element={<Customers />} />
+                <Route path="/customers" element={<Customers />} /> */}
+                <Route path="/deposit" element={<Deposit />} />
+                <Route path="/withdraw" element={<Withdraw />} />
+                <Route path="/history" element={<Customers />} />
+                <Route path="/profile" element={<Customers />} />
+                <Route path="/logout1" element={<Customers />} />
                 apps
                 <Route path="/kanban" element={<Kanban />} />
                 <Route path="/editor" element={<Editor />} />

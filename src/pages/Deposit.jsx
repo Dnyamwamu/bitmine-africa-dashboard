@@ -32,12 +32,12 @@ const DropDown = ({ currentMode }) => (
   </div>
 )
 
-const Ecommerce = () => {
+const Deposit = () => {
   const { currentColor, currentMode } = useStateContext()
 
   return (
     <div className="mt-24">
-      <div className="flex flex-wrap lg:flex-nowrap justify-center ">
+      {/* <div className="flex flex-wrap lg:flex-nowrap justify-center ">
         <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-44 rounded-xl w-full lg:w-80 p-8 pt-9 m-3  bg-cover bg-center">
           <div className="flex justify-between items-center">
             <div>
@@ -52,14 +52,14 @@ const Ecommerce = () => {
               <GiTakeMyMoney />
             </button>
           </div>
-          {/* <div className="mt-6">
+          <div className="mt-6">
             <Button
               color="white"
               bgColor={currentColor}
               text="Download"
               borderRadius="10px"
             />
-          </div> */}
+          </div>
         </div>
         <div className="flex m-3 flex-wrap justify-center gap-1 items-center">
           {earningData.map((item) => (
@@ -84,24 +84,24 @@ const Ecommerce = () => {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
 
-      {/* <div className="flex gap-10 flex-wrap justify-center">
+      <div className="flex gap-10 flex-wrap justify-center">
         <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl md:w-780  ">
           <div className="flex justify-between">
-            <p className="font-semibold text-xl">Revenue Updates</p>
+            <p className="font-semibold text-xl">Deposit</p>
             <div className="flex items-center gap-4">
               <p className="flex items-center gap-2 text-gray-600 hover:drop-shadow-xl">
                 <span>
                   <GoPrimitiveDot />
                 </span>
-                <span>Expense</span>
+                <span>Current Investments</span>
               </p>
               <p className="flex items-center gap-2 text-green-400 hover:drop-shadow-xl">
                 <span>
                   <GoPrimitiveDot />
                 </span>
-                <span>Budget</span>
+                <span>Deposit</span>
               </p>
             </div>
           </div>
@@ -109,17 +109,17 @@ const Ecommerce = () => {
             <div className=" border-r-1 border-color m-4 pr-10">
               <div>
                 <p>
-                  <span className="text-3xl font-semibold">$93,438</span>
+                  <span className="text-3xl font-semibold">$93</span>
                   <span className="p-1.5 hover:drop-shadow-xl cursor-pointer rounded-full text-white bg-green-400 ml-3 text-xs">
-                    23%
+                    +2%
                   </span>
                 </p>
-                <p className="text-gray-500 mt-1">Budget</p>
+                <p className="text-gray-500 mt-1">Current Investments</p>
               </div>
               <div className="mt-8">
-                <p className="text-3xl font-semibold">$48,487</p>
+                <p className="text-3xl font-semibold">$20</p>
 
-                <p className="text-gray-500 mt-1">Expense</p>
+                <p className="text-gray-500 mt-1">Deposit</p>
               </div>
 
               <div className="mt-5">
@@ -137,7 +137,7 @@ const Ecommerce = () => {
                 <Button
                   color="white"
                   bgColor={currentColor}
-                  text="Download Report"
+                  text="Deposit"
                   borderRadius="10px"
                 />
               </div>
@@ -147,7 +147,7 @@ const Ecommerce = () => {
             </div>
           </div>
         </div>
-        <div>
+        {/* <div>
           <div
             className=" rounded-2xl md:w-400 p-4 m-3"
             style={{ backgroundColor: currentColor }}
@@ -191,11 +191,11 @@ const Ecommerce = () => {
               />
             </div>
           </div>
-        </div>
-      </div> */}
+        </div> */}
+      </div>
 
-      <div className="flex gap-10 m-4 flex-wrap justify-center">
-        {/* <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg p-6 rounded-2xl">
+      {/* <div className="flex gap-10 m-4 flex-wrap justify-center">
+        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg p-6 rounded-2xl">
           <div className="flex justify-between items-center gap-2">
             <p className="text-xl font-semibold">Recent Transactions</p>
             <DropDown currentMode={currentMode} />
@@ -235,7 +235,7 @@ const Ecommerce = () => {
 
             <p className="text-gray-400 text-sm">36 Recent Transactions</p>
           </div>
-        </div> */}
+        </div>
         <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg p-6 rounded-2xl w-96 md:w-760">
           <div className="flex justify-between items-center gap-2 mb-10">
             <p className="text-xl font-semibold">Investment Summary</p>
@@ -247,7 +247,7 @@ const Ecommerce = () => {
         </div>
       </div>
 
-      {/* <div className="flex flex-wrap justify-center">
+      <div className="flex flex-wrap justify-center">
         <div className="md:w-400 bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl p-6 m-3">
           <div className="flex justify-between">
             <p className="text-xl font-semibold">Weekly Stats</p>
@@ -396,4 +396,4 @@ const Ecommerce = () => {
   )
 }
 
-export default Ecommerce
+export default Deposit

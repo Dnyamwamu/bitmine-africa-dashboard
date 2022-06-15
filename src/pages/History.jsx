@@ -14,7 +14,7 @@ import {
   Inject,
 } from "@syncfusion/ej2-react-grids"
 
-import { ordersData, contextMenuItems, ordersGrid } from "../data/dummy"
+import { historyData, contextMenuItems, historyGrid } from "../data/dummy"
 import { Header } from "../components"
 
 const History = () => {
@@ -24,7 +24,7 @@ const History = () => {
       <Header category="History" title="Transaction Statistics" />
       <GridComponent
         id="gridcomp"
-        dataSource={ordersData}
+        dataSource={historyData}
         allowPaging
         allowSorting
         allowExcelExport
@@ -34,7 +34,7 @@ const History = () => {
       >
         <ColumnsDirective>
           {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-          {ordersGrid.map((item, index) => (
+          {historyGrid.map((item, index) => (
             <ColumnDirective key={index} {...item} />
           ))}
         </ColumnsDirective>

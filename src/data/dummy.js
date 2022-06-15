@@ -19,7 +19,7 @@ import {
 } from "react-icons/fi"
 
 import { VscGraphLine } from "react-icons/vsc"
-import { FaHome, FaHistory } from "react-icons/fa"
+import { FaHome, FaHistory, FaMoneyBill } from "react-icons/fa"
 import { GiPayMoney, GiReceiveMoney, GiTwoCoins, GiCoins } from "react-icons/gi"
 import { ImProfile } from "react-icons/im"
 import { BiMessageDetail } from "react-icons/bi"
@@ -55,11 +55,11 @@ import product8 from "./product8.jpg"
 
 export const gridOrderImage = (props) => (
   <div>
-    <img
+    {/* <img
       className="rounded-xl h-20 md:ml-3"
       src={props.ProductImage}
       alt="-item"
-    />
+    /> */}
   </div>
 )
 
@@ -546,6 +546,10 @@ export const links = [
         name: "History",
         icon: <FaHistory />,
       },
+      {
+        name: "Get a Loan",
+        icon: <FaMoneyBill />,
+      },
     ],
   },
   {
@@ -897,29 +901,29 @@ export const userProfileData = [
   },
 ]
 
-export const ordersGrid = [
+export const depositGrid = [
   {
     headerText: "Type",
     template: gridOrderImage,
     textAlign: "Center",
-    width: "120",
+    width: "80",
   },
   {
-    field: "OrderItems",
+    field: "TransactionID",
     headerText: "TransactionID",
     width: "150",
     editType: "dropdownedit",
     textAlign: "Center",
   },
   {
-    field: "CustomerName",
-    headerText: "Customer Name",
-    width: "150",
+    field: "DepositedOn",
+    headerText: "Deposited On",
+    width: "200",
     textAlign: "Center",
   },
   {
-    field: "TotalAmount",
-    headerText: "Total Amount",
+    field: "Amount",
+    headerText: "Amount",
     format: "C2",
     textAlign: "Center",
     editType: "numericedit",
@@ -933,16 +937,95 @@ export const ordersGrid = [
     width: "120",
   },
   {
-    field: "OrderID",
-    headerText: "Created At",
+    field: "TransactionLink",
+    headerText: "TransactionLink",
     width: "120",
     textAlign: "Center",
   },
+]
 
+export const withdrawGrid = [
   {
-    field: "Location",
-    headerText: "Location",
+    headerText: "Type",
+    template: gridOrderImage,
+    textAlign: "Center",
+    width: "80",
+  },
+  {
+    field: "TransactionID",
+    headerText: "TransactionID",
     width: "150",
+    editType: "dropdownedit",
+    textAlign: "Center",
+  },
+  {
+    field: "WithdrawnOn",
+    headerText: "Withdrawn On",
+    width: "200",
+    textAlign: "Center",
+  },
+  {
+    field: "Amount",
+    headerText: "Amount",
+    format: "C2",
+    textAlign: "Center",
+    editType: "numericedit",
+    width: "150",
+  },
+  {
+    headerText: "Status",
+    template: gridOrderStatus,
+    field: "OrderItems",
+    textAlign: "Center",
+    width: "120",
+  },
+  {
+    field: "TransactionLink",
+    headerText: "TransactionLink",
+    width: "120",
+    textAlign: "Center",
+  },
+]
+
+export const historyGrid = [
+  {
+    headerText: "Type",
+    template: gridOrderImage,
+    textAlign: "Center",
+    width: "80",
+  },
+  {
+    field: "TransactionID",
+    headerText: "TransactionID",
+    width: "150",
+    editType: "dropdownedit",
+    textAlign: "Center",
+  },
+  {
+    field: "TransactedOn",
+    headerText: "Transacted On",
+    width: "200",
+    textAlign: "Center",
+  },
+  {
+    field: "Amount",
+    headerText: "Amount",
+    format: "C2",
+    textAlign: "Center",
+    editType: "numericedit",
+    width: "150",
+  },
+  {
+    headerText: "Status",
+    template: gridOrderStatus,
+    field: "OrderItems",
+    textAlign: "Center",
+    width: "120",
+  },
+  {
+    field: "TransactionLink",
+    headerText: "TransactionLink",
+    width: "120",
     textAlign: "Center",
   },
 ]
@@ -1219,45 +1302,106 @@ export const employeesData = [
 
 export const ordersData = [
   {
-    TransactionID: 10248,
-    CustomerName: "Dpt102837",
-
-    TotalAmount: 32.38,
-    OrderItems: "Fresh Tomato",
-    Location: "USA",
+    TransactionID: "DP123USD",
+    DepositedOn: "13/06/2022 3.40pm EAC",
+    Amount: 32.38,
     Status: "pending",
     StatusBg: "#FB9678",
-    ProductImage: product6,
+    TransactionLink: "dep-0q8uudkjh/kjhbkjhc/6USD",
   },
   {
-    OrderID: 345653,
-    CustomerName: "Carson Darrin",
-    TotalAmount: 56.34,
-    OrderItems: "Butter Scotch",
-    Location: "Delhi",
-    Status: "complete",
-    StatusBg: "#8BE78B",
-    ProductImage: product5,
-  },
-  {
-    OrderID: 390457,
-    CustomerName: "Fran Perez",
-    TotalAmount: 93.31,
-    OrderItems: "Candy Gucci",
-    Location: "New York",
-    Status: "active",
+    TransactionID: "DP124USD",
+    DepositedOn: "13/06/2022 3.40pm EAC",
+    Amount: 12.38,
+    Status: "Active",
     StatusBg: "#03C9D7",
-    ProductImage: product7,
+    TransactionLink: "dep-1q8uudkjh/kjhbkjhc/3USD",
   },
   {
-    OrderID: 893486,
-    CustomerName: "Anika Viseer",
-    TotalAmount: 93.31,
-    OrderItems: "Night Lamp",
-    Location: "Germany",
-    Status: "canceled",
-    StatusBg: "#FF5C8E",
-    ProductImage: product4,
+    TransactionID: "DP124USD",
+    DepositedOn: "13/06/2022 3.40pm EAC",
+    Amount: 12.38,
+    Status: "Complete",
+    StatusBg: "#8BE78B",
+    TransactionLink: "dep-1q8uudkjh/kjhbkjhc/3USD",
+  },
+  {
+    TransactionID: "DP124USD",
+    DepositedOn: "13/06/2022 3.40pm EAC",
+    Amount: 12.38,
+    Status: "Complete",
+    StatusBg: "#8BE78B",
+    TransactionLink: "dep-1q8uudkjh/kjhbkjhc/3USD",
+  },
+]
+
+export const withdrawnData = [
+  {
+    TransactionID: "WD123USD",
+    WithdrawnOn: "13/06/2022 3.40pm EAC",
+    Amount: 32.38,
+    Status: "pending",
+    StatusBg: "#FB9678",
+    TransactionLink: "wdr-0q8uudkjh/kjhbkjhc/6USD",
+  },
+  {
+    TransactionID: "WD124USD",
+    WithdrawnOn: "13/06/2022 3.40pm EAC",
+    Amount: 12.38,
+    Status: "Active",
+    StatusBg: "#03C9D7",
+    TransactionLink: "wdr-1q8uudkjh/kjhbkjhc/3USD",
+  },
+  {
+    TransactionID: "WD124USD",
+    WithdrawnOn: "13/06/2022 3.40pm EAC",
+    Amount: 12.38,
+    Status: "Complete",
+    StatusBg: "#8BE78B",
+    TransactionLink: "wdr-1q8uudkjh/kjhbkjhc/3USD",
+  },
+  {
+    TransactionID: "WD124USD",
+    WithdrawnOn: "13/06/2022 3.40pm EAC",
+    Amount: 12.38,
+    Status: "Complete",
+    StatusBg: "#8BE78B",
+    TransactionLink: "wdr-1q8uudkjh/kjhbkjhc/3USD",
+  },
+]
+
+export const historyData = [
+  {
+    TransactionID: "WD123USD",
+    WithdrawnOn: "13/06/2022 3.40pm EAC",
+    Amount: 32.38,
+    Status: "pending",
+    StatusBg: "#FB9678",
+    TransactionLink: "wdr-0q8uudkjh/kjhbkjhc/6USD",
+  },
+  {
+    TransactionID: "DP124USD",
+    DepositedOn: "13/06/2022 3.40pm EAC",
+    Amount: 12.38,
+    Status: "Active",
+    StatusBg: "#03C9D7",
+    TransactionLink: "wdr-1q8uudkjh/kjhbkjhc/3USD",
+  },
+  {
+    TransactionID: "WD124USD",
+    WithdrawnOn: "13/06/2022 3.40pm EAC",
+    Amount: 12.38,
+    Status: "Complete",
+    StatusBg: "#8BE78B",
+    TransactionLink: "wdr-1q8uudkjh/kjhbkjhc/3USD",
+  },
+  {
+    TransactionID: "DP124USD",
+    DepositedOn: "13/06/2022 3.40pm EAC",
+    Amount: 12.38,
+    Status: "Complete",
+    StatusBg: "#8BE78B",
+    TransactionLink: "wdr-1q8uudkjh/kjhbkjhc/3USD",
   },
 ]
 

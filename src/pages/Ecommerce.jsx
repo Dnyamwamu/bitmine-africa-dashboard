@@ -17,6 +17,7 @@ import {
 } from "../data/dummy"
 import { useStateContext } from "../contexts/ContextProvider"
 import product9 from "../data/product9.jpg"
+import { FaHistory, FaWallet } from "react-icons/fa"
 
 const DropDown = ({ currentMode }) => (
   <div className="w-28 border-1 border-color px-2 py-1 rounded-md">
@@ -86,7 +87,7 @@ const Ecommerce = () => {
         </div>
       </div>
 
-      <div className="flex gap-10 m-4 flex-wrap justify-center">
+      <div className="flex gap-5 m-6 justify-center">
         {/* <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg p-6 rounded-2xl">
           <div className="flex justify-between items-center gap-2">
             <p className="text-xl font-semibold">Recent Transactions</p>
@@ -128,13 +129,62 @@ const Ecommerce = () => {
             <p className="text-gray-400 text-sm">36 Recent Transactions</p>
           </div>
         </div> */}
-        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg p-6 rounded-2xl w-96 md:w-760">
+        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg p-6 rounded-2xl w-3/4 md:w-3/4">
           <div className="flex justify-between items-center gap-2 mb-10">
             <p className="text-xl font-semibold">Investment Summary</p>
             <DropDown currentMode={currentMode} />
           </div>
           <div className="md:w-full overflow-auto">
             <LineChart />
+          </div>
+        </div>
+
+        <div className="flex-col">
+          <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-44 rounded-xl w-full lg:w-80 p-8 pt-9 m-3  bg-cover bg-center">
+            <div className="flex justify-between items-center">
+              <div>
+                <p className="font-bold text-gray-400">Current Investments</p>
+                <p className="text-2xl">USD 152.78</p>
+              </div>
+              <button
+                type="button"
+                style={{ backgroundColor: currentColor }}
+                className="text-2xl opacity-0.9 text-white hover:drop-shadow-xl rounded-full  p-4"
+              >
+                <FaHistory />
+              </button>
+            </div>
+            <div className="mt-6">
+              <Button
+                color="white"
+                bgColor={currentColor}
+                text="Re-Invest"
+                borderRadius="10px"
+              />
+            </div>
+          </div>
+          <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-44 rounded-xl w-full lg:w-80 p-8 pt-9 m-3  bg-cover bg-center">
+            <div className="flex justify-between items-center">
+              <div>
+                <p className="font-bold text-gray-400">Wallet</p>
+                <p className="text-2xl">NowPayments</p>
+              </div>
+              <button
+                type="button"
+                style={{ backgroundColor: currentColor }}
+                className="text-2xl opacity-0.9 text-white hover:drop-shadow-xl rounded-full  p-4"
+              >
+                <FaWallet />
+              </button>
+            </div>
+            <div className="mt-6">
+              <Button
+                color="white"
+                bgColor={currentColor}
+                text="Deposit"
+                borderRadius="10px"
+              />
+            </div>
           </div>
         </div>
       </div>

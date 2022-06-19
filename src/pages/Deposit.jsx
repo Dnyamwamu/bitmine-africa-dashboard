@@ -1,21 +1,8 @@
-import React from "react"
-import { GiTakeMyMoney } from "react-icons/gi"
-
-import { GoPrimitiveDot } from "react-icons/go"
-import { IoIosMore } from "react-icons/io"
+import React, { useState } from "react"
+import { DialogComponent } from "@syncfusion/ej2-react-popups"
 import { DropDownListComponent } from "@syncfusion/ej2-react-dropdowns"
-
-import { Stacked, Pie, Button, LineChart, SparkLine } from "../components"
-import {
-  earningData,
-  medicalproBranding,
-  recentTransactions,
-  weeklyStats,
-  dropdownData,
-  SparklineAreaData,
-  ecomPieChartData,
-} from "../data/dummy"
-
+import { Button } from "../components"
+import { dropdownData } from "../data/dummy"
 import {
   GridComponent,
   ColumnsDirective,
@@ -34,7 +21,7 @@ import { ordersData, contextMenuItems, depositGrid } from "../data/dummy"
 import { Header } from "../components"
 
 import { useStateContext } from "../contexts/ContextProvider"
-import product9 from "../data/product9.jpg"
+import nowPayments from "../data/NowPayments.jfif"
 
 const DropDown = ({ currentMode }) => (
   <div className="w-28 border-1 border-color px-2 py-1 rounded-md">
@@ -51,6 +38,54 @@ const DropDown = ({ currentMode }) => (
 )
 
 const Deposit = () => {
+  const [visibility, setDialogVisibility] = useState(false)
+
+  const onOverlayClick = () => {
+    setDialogVisibility(true)
+  }
+  const dialogClose = () => {
+    setDialogVisibility(false)
+  }
+  const handleClick = () => {
+    setDialogVisibility(true)
+  }
+
+  const header = () => {
+    return (
+      <div>
+        <img src={nowPayments} />
+        <div
+          title="NOWPayments"
+          className="e-icon-settings dlg-template e-primary"
+        >
+          <a href="https://account.nowpayments.io/sign-in">
+            Sign in to your Account
+          </a>
+        </div>
+      </div>
+    )
+  }
+  const footerTemplate = () => {
+    return (
+      <div>
+        <p>
+          Cryptocurrency payment gateway which allows businesses to accept BTC,
+          ETH, XRP and other coins on their websites.
+        </p>
+
+        <a href="https://account.nowpayments.io/sign-in" className="mt-24">
+          <button
+            id="sendButton"
+            className="e-control e-btn e-primary"
+            data-ripple="true"
+          >
+            Sign In
+          </button>
+        </a>
+      </div>
+    )
+  }
+
   const { currentColor, currentMode } = useStateContext()
   const editing = { allowDeleting: true, allowEditing: true }
   return (
@@ -58,14 +93,30 @@ const Deposit = () => {
       <div className="flex justify-between">
         <Header category="Transaction Statistics" title="Deposit" />
         <div className="opacity-0.9 hover:drop-shadow-xl">
-          <Button
-            color="white"
-            bgColor={currentColor}
-            text="Deposit +"
-            borderRadius="10px"
-          />
+          <div onClick={handleClick}>
+            <Button
+              color="white"
+              bgColor={currentColor}
+              text="Deposit +"
+              borderRadius="10px"
+            />
+          </div>
+          
         </div>
       </div>
+      <DialogComponent
+        width="450px"
+        isModal={true}
+        visible={visibility}
+        close={dialogClose}
+        overlayClick={onOverlayClick}
+        header={header}
+        footerTemplate={footerTemplate}
+        showCloseIcon={true}
+        closeOnEscape={true}
+      >
+        Deposit with NOWPayments
+      </DialogComponent>
       <GridComponent
         id="gridcomp"
         dataSource={ordersData}

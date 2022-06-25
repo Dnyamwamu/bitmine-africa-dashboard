@@ -144,23 +144,11 @@ const Ecommerce = () => {
             <LineChart />
           </div>
         </div>
-
-        <div className="flex">
-          <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-44 rounded-xl w-full lg:w-80 p-8 pt-9 m-3  bg-cover bg-center">
-            <div className="flex justify-between items-center">
-              <div>
-                <p className="font-bold text-gray-400">Current-Investments</p>
-                <p className="text-2xl">$152.78</p>
-              </div>
-              <button
-                type="button"
-                style={{ backgroundColor: currentColor }}
-                className="text-2xl opacity-0.9 text-white hover:drop-shadow-xl rounded-full  p-4"
-              >
-                <FaHistory />
-              </button>
-            </div>
-            <div className="mt-6" onClick={handleClick}>
+      </div>
+      <div className="flex justify-center">
+        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-24 rounded-xl w-50 p-8 pt-9 m-3">
+          <div className="justify-center items-center">
+            <div onClick={handleClick}>
               <Button
                 color="white"
                 bgColor={currentColor}
@@ -169,28 +157,15 @@ const Ecommerce = () => {
               />
             </div>
           </div>
-          <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-44 rounded-xl w-full lg:w-80 p-8 pt-9 m-3  bg-cover bg-center">
-            <div className="flex justify-between items-center">
-              <div>
-                <p className="font-bold text-gray-400">Wallet</p>
-                <p className="text-2xl">NowPayments</p>
-              </div>
-              <button
-                type="button"
-                style={{ backgroundColor: currentColor }}
-                className="text-2xl opacity-0.9 text-white hover:drop-shadow-xl rounded-full  p-4"
-              >
-                <FaWallet />
-              </button>
-            </div>
-            <div className="mt-6" onClick={handleClick}>
-              <Button
-                color="white"
-                bgColor={currentColor}
-                text="Deposit"
-                borderRadius="10px"
-              />
-            </div>
+        </div>
+        <div className="justify-center items-center bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-24 rounded-xl w-50 p-8 pt-9 m-3">
+          <div onClick={handleClick}>
+            <Button
+              color="white"
+              bgColor={currentColor}
+              text="Deposit"
+              borderRadius="10px"
+            />
           </div>
         </div>
       </div>

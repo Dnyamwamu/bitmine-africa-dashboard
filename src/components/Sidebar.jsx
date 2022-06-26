@@ -18,9 +18,9 @@ const Sidebar = () => {
   }
 
   const activeLink =
-    "flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg  text-white  text-md m-2"
+    "flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg  text-black font-bold  text-md m-2"
   const normalLink =
-    "flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md text-gray-700 dark:text-gray-200 dark:hover:text-black hover:bg-light-gray m-2"
+    "flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md text-gray-700 dark:text-gray-900 dark:hover:text-black hover:bg-light-gray m-2"
 
   return (
     <div className="ml-3 h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-10">
@@ -30,13 +30,13 @@ const Sidebar = () => {
             <a
               href="https://bitmine-afrika.vercel.app/"
               onClick={handleCloseSideBar}
-              className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900"
+              className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-black text-slate-900"
             >
               <GiAfrica />
               <span>Bitmine</span>
               <p
                 style={{
-                  color: "#00b0ff",
+                  color: "#000",
                   fontWeight: "400",
                   fontSize: "1.2rem",
                   marginLeft: "-10px",
@@ -59,7 +59,7 @@ const Sidebar = () => {
           <div className="mt-10 ">
             {links.map((item) => (
               <div key={item.title}>
-                <p className="text-gray-400 dark:text-gray-400 m-3 mt-4 uppercase">
+                <p className="text-gray-700 dark:text-gray-800 m-3 mt-4 uppercase">
                   {item.title}
                 </p>
                 {item.links.map((link) => (

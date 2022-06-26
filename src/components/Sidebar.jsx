@@ -32,8 +32,8 @@ const Sidebar = () => {
               onClick={handleCloseSideBar}
               className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-black text-slate-900"
             >
-              <GiAfrica />
-              <span>Bitmine</span>
+              <GiAfrica className="text-white text-2xl" />
+              <span className="text-white">Bitmine</span>
               <p
                 style={{
                   color: "#000",
@@ -68,7 +68,7 @@ const Sidebar = () => {
                     key={link.name}
                     onClick={handleCloseSideBar}
                     style={({ isActive }) => ({
-                      backgroundColor: isActive ? currentColor : "",
+                      backgroundColor: isActive ? "#fff" : "",
                     })}
                     className={({ isActive }) =>
                       isActive ? activeLink : normalLink

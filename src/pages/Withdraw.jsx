@@ -102,7 +102,7 @@ const Withdraw = () => {
           <div onClick={handleClick}>
             <Button
               color="white"
-              bgColor={currentColor}
+              bgColor="#00b0ff"
               text="Withdraw -"
               borderRadius="10px"
             />
@@ -116,13 +116,13 @@ const Withdraw = () => {
         visible={visibility}
         close={dialogClose}
         overlayClick={onOverlayClick}
-        header={header}
-        footerTemplate={footerTemplate}
+        // header={header}
+        // footerTemplate={footerTemplate}
         showCloseIcon={true}
-        title="NowPayments"
+        // title="NowPayments"
         closeOnEscape={true}
       >
-        Transact with NOWPayments
+        To be Updated.....
       </DialogComponent>
 
       <GridComponent

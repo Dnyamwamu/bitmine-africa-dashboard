@@ -96,12 +96,11 @@ const Deposit = () => {
           <div onClick={handleClick}>
             <Button
               color="white"
-              bgColor={currentColor}
+              bgColor="#00b0ff"
               text="Deposit +"
               borderRadius="10px"
             />
           </div>
-          
         </div>
       </div>
       <DialogComponent
@@ -110,12 +109,12 @@ const Deposit = () => {
         visible={visibility}
         close={dialogClose}
         overlayClick={onOverlayClick}
-        header={header}
-        footerTemplate={footerTemplate}
+        // header={header}
+        // footerTemplate={footerTemplate}
         showCloseIcon={true}
         closeOnEscape={true}
       >
-        Deposit with NOWPayments
+        To be updated....
       </DialogComponent>
       <GridComponent
         id="gridcomp"

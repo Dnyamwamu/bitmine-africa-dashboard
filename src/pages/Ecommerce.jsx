@@ -84,17 +84,17 @@ const Ecommerce = () => {
     )
   }
   return (
-    <div className="mt-24">
+    <div className="mt-14">
       <div className="flex flex-wrap lg:flex-nowrap justify-center ">
-        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-44 rounded-xl w-full lg:w-80 p-8 pt-9 m-3  bg-cover bg-center">
-          <div className="flex justify-between items-center">
+        <div className=" dark:text-gray-200  h-44 rounded-xl w-full lg:w-80 p-8 pt-9 m-3 bg-slate-800">
+          <div className="flex justify-between items-center ">
             <div>
               <p className="font-bold text-gray-400">Current Investments</p>
               <p className="text-2xl">USD 152.78</p>
             </div>
             <button
               type="button"
-              style={{ backgroundColor: currentColor }}
+              style={{ backgroundColor: "#00b0ff" }}
               className="text-2xl opacity-0.9 text-white hover:drop-shadow-xl rounded-full  p-4"
             >
               <GiTakeMyMoney />
@@ -113,7 +113,7 @@ const Ecommerce = () => {
           {earningData.map((item) => (
             <div
               key={item.title}
-              className="bg-white h-44 dark:text-gray-200 dark:bg-secondary-dark-bg md:w-56  p-4 pt-9 rounded-2xl "
+              className=" h-44 dark:text-gray-200 bg-slate-800  md:w-56  p-4 pt-9 rounded-2xl "
             >
               <button
                 type="button"
@@ -134,20 +134,27 @@ const Ecommerce = () => {
         </div>
       </div>
 
-      <div className="flex flex-wrap gap-5 m-6 justify-center">
-        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg p-6 rounded-2xl w-3/4 md:w-3/4">
+      <div className="flex flex-wrap justify-center">
+        <div className=" dark:text-gray-200 bg-slate-800 p-6 rounded-2xl w-3/4 md:w-3/4">
           <div className="flex justify-between items-center gap-2 mb-10">
             <p className="text-xl font-semibold">Investment Summary</p>
             <DropDown currentMode={currentMode} />
           </div>
-          <div className="md:w-full overflow-auto">
+          <div className="md:w-full overflow-auto bg-slate-800  ">
             <LineChart />
           </div>
         </div>
       </div>
+
       <div className="flex justify-center">
-        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-24 rounded-xl w-50 p-8 pt-9 m-3">
-          <div className="justify-center items-center">
+        <div className=" dark:text-gray-200 bg-slate-800  h-34 rounded-xl w-50 p-8 pt-9 m-3">
+          <div className="justify-center">
+            <div>
+              <p className="font-bold text-gray-400 pb-2">
+                Current Investments -{" "}
+                <span className="font-bold text-white">USD 152.78</span>
+              </p>
+            </div>
             <div onClick={handleClick}>
               <Button
                 color="white"
@@ -158,7 +165,8 @@ const Ecommerce = () => {
             </div>
           </div>
         </div>
-        <div className="justify-center items-center bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-24 rounded-xl w-50 p-8 pt-9 m-3">
+        <div className="justify-center items-center  dark:text-gray-200 bg-slate-800  h-34 rounded-xl w-50 p-8 pt-9 m-3">
+          <p className="font-bold text-gray-400 pb-2">Fund your Account</p>
           <div onClick={handleClick}>
             <Button
               color="white"
